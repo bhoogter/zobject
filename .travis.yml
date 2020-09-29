@@ -14,6 +14,7 @@ before_deploy:
 - composer install --prefer-dist --no-dev --no-interaction
 - php box.phar build
 deploy:
+  overrwrite: true
   provider: releases
   api_key:
     secure: pxN6bXMClAX9s3A9AWt/fF9yVhelTjdu/UVkYPrcXP3LVuu6PuZ+hVpzYBIu9okUTOeD4i4UYzieh8AZlEr2tVLATwzD4rxnpg0oUWCTZwUbkuNE3FzykE+FUhaY0wXTMZiB3BvltONFIby+1P4RrADBbAjX0dc2tBJJQ7vaaqdfvkUE5fYBwjhYB561jKXnpM+tah2OP75OLFDpC5nUhjms26kXtspahZvwSMVnu8LDZ/A2Lcw5KnclYCiIC6eSMPx+XnIuRL0HW4erR4C3cxyw/oIhIDN51f7JULq2U7jyEYxaUIoCjZSJd5F5AhWfhWnXfbgjXJ74ZNUuUuEsJx+1x+32MKou6bbAbVE58j6VxvydeMLAwcAfJm8/TH6WKUbsK+EAODBDxE9OUbqoEvinY2GcFhy6YU171pZG0K+PffvXrawaFj/B6l8kInw9wnc3kHRGUJCNP+m873/V/Mm8CXuiq6Xb9Ml/qmXRlTXWINzIsgFkcvIwo+sDtQ/R7agi3mG66ex+SmLcvJPJdEIxIahAfMGy2VDSHPkNY5RR1RfFWQOn58OQ1b75l0WZbXINfyOxIQH6xyrwVFgpWrFSLeyTbRKIIodpcNmwOveCxh29dr2YJgn0LXk4otovpi2rhstOd/DyuXKONxWSDDqsQEcByhpYYn4y+bPaAEM=
