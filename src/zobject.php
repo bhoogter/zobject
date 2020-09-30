@@ -9,14 +9,21 @@ class zobject
     private static $iOBJs = [];
     private static $keys = [];
 
-    static function DEBUG_TRANSFORM() { return ""; }
-    static function DEBUG_TRANSFORM_ROW() { return ""; }
-    static function DEBUG_TRANSFORM_FIELD() { return ""; }
-    static function DEBUG_TRANSFORM_DATA_FIELD() { return ""; }
-    static function DEBUG_TRANSFORM_DATA_INPUT() { return ""; }
+    public static $_DEBUG_TRANSFORM = "";
+    static function DEBUG_TRANSFORM() { return self::$_DEBUG_TRANSFORM; }
+    public static $_DEBUG_TRANSFORM_ROW  = "";
+    static function DEBUG_TRANSFORM_ROW() { return self::$_DEBUG_TRANSFORM_ROW; }
+    public static $_DEBUG_TRANSFORM_FIELD = "";
+    static function DEBUG_TRANSFORM_FIELD() { return self::$_DEBUG_TRANSFORM_FIELD; }
+    public static $_DEBUG_TRANSFORM_DATA_FIELD  = "";
+    static function DEBUG_TRANSFORM_DATA_FIELD() { return self::$_DEBUG_TRANSFORM_FIELD; }
+    public static $_DEBUG_TRANSFORM_DATA_INPUT = "";
+    static function DEBUG_TRANSFORM_DATA_INPUT() { return self::$_DEBUG_TRANSFORM_DATA_INPUT; }
 
-    static function BENCHMARK_TRANSFORM() { return ""; }
-    static function BENCHMARK_ROWS() { return ""; }
+    public static $_BENCHMARK_TRANSFORM = "";
+    static function BENCHMARK_TRANSFORM() { return self::$_BENCHMARK_TRANSFORM; }
+    public static $_BENCHMARK_ROWS = "";
+    static function BENCHMARK_ROWS() { return self::$_BENCHMARK_ROWS; }
 
     static function render($el, $params = [], $vArgs = "")
     {

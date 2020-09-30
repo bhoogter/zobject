@@ -1,6 +1,6 @@
 {
-  "name": "bhoogter/class-xml-file",
-  "description": "XML File Helper Object",
+  "name": "bhoogter/zobject",
+  "description": "ZObject",
   "authors": [
     {
       "name": "Benjamin Hoogterp",
@@ -10,7 +10,7 @@
   "keywords": [
     "xml"
   ],
-  "homepage": "http://www.github.com/bhoogter/class-xml-file",
+  "homepage": "http://www.github.com/bhoogter/zobject",
   "license": "LGPL v3",
   "autoload": {
     "classmap": [
