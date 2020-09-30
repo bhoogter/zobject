@@ -4,7 +4,6 @@
     "VERSION",
     "LICENSE"
   ],
-  "directories" : [ "src" ],
-  "stub": "src/stub.php",
+  "map": [ {"src" : ""} ],
   "output": "zobject.phar"
 }
