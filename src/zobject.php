@@ -139,7 +139,9 @@ class zobject
         php_logger::call();
     }
 
-    static function transform() { return realpath(__DIR__ . "/source/transform.xsl"); }
+    static function pharpath($s) { return (strpos(__FILE__, ".phar") === false) ? realpath($s) : $s; }
+    static function transform() { return self::pharpath(__DIR__ . "/source/transform.xsl"); }
+    static function autotemplate_xsl() { return self::pharpath(__DIR__ . "/source/auto-template.xsl"); }
 
     static function ObjectList() {return xml_site::$source->lst("//MODULES/modules/module/zobjectdef/@name");}
     static function ModuleList() {return xml_site::$source->lst("//MODULES/modules/module/@name");}

@@ -37,8 +37,6 @@ class zobject_autotemplate
 		return $result;
         }
         
-        private static function autotemplate_xsl() {
-            return realpath(__DIR__ . "/source/auto-template.xsl"); 
-        }
+        private static function autotemplate_xsl() { return zobject::autotemplate_xsl(); }
 	}
 
