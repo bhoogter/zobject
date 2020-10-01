@@ -6,7 +6,7 @@
     xsl:extension-element-prefixes="php" 
     exclude-result-prefixes="php"
     >
-    <xsl:import href="data-input.xsl" />
+    <xsl:include href="data-input.xsl" />
 
     <xsl:variable name='DEFS' select='php:function("zobject::source_document","MODULES")'/>
     <xsl:variable name='HandledElements' select='php:functionString("zobject::handled_elements")'/>

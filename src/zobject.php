@@ -139,9 +139,25 @@ class zobject
         php_logger::call();
     }
 
-    static function pharpath($s) { return (strpos(__FILE__, ".phar") === false) ? realpath($s) : $s; }
-    static function transform() { return self::pharpath(__DIR__ . "/source/transform.xsl"); }
+    static function pharpath($s = "") { if ($s == "") $s = __DIR__; return (strpos(__FILE__, ".phar") === false) ? realpath($s) : $s; }
+    static function datainput_xsl() { return self::pharpath(__DIR__ . "/source/data-input.xsl"); }
+    static function transform_xsl() { return self::pharpath(__DIR__ . "/source/transform.xsl"); }
+    static function transform() { return self::merge_xsl(); }
     static function autotemplate_xsl() { return self::pharpath(__DIR__ . "/source/auto-template.xsl"); }
+
+    static function merge_xsl() {
+        $target = "<xsl:include href=\"data-input.xsl\" />";
+
+        $di = file_get_contents(self::datainput_xsl());
+        $x = strpos($di, ">", strpos($di, "<xsl:stylesheet"));
+        $y = strpos($di, "</xsl:stylesheet");
+        $import = substr($di, $x + 1, $y - $x);
+
+        $xsl = file_get_contents(self::transform_xsl());
+        $xsl = str_replace($target, $import, $xsl);
+
+        return new xml_file($xsl);
+    }
 
     static function ObjectList() {return xml_site::$source->lst("//MODULES/modules/module/zobjectdef/@name");}
     static function ModuleList() {return xml_site::$source->lst("//MODULES/modules/module/@name");}

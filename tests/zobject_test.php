@@ -11,7 +11,12 @@ class zobject_test extends TestCase
     {
     }
 
-    public function testLayout(): void {
+    public function testSetupIsOk(): void {
         $this->assertTrue(true);
+    }
+
+    public function testMergeTransformXsl() {
+        $res = zobject::merge_xsl();
+        // print_r($res->saveXML());
     }
 }
