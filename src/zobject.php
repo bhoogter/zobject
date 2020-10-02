@@ -156,8 +156,6 @@ class zobject
         $xsl = file_get_contents(self::transform_xsl());
         $xsl = str_replace($target, $import, $xsl);
 
-        file_put_contents(__DIR__ . "/tmp.xsl", $xsl);
-
         return new xml_file($xsl);
     }
 
