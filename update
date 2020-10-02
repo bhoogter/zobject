@@ -4,3 +4,6 @@ cd $(dirname $0)
 ../php-dependency-manager/package
 cp ../php-dependency-manager/php-dependency-manager.phar src/phars
 
+../xml-site/package
+cp ../xml-site/xml-site.phar src/phars/bhoogter-xml-site-1-0-0.phar
+
