@@ -17,7 +17,6 @@ require_once("zobject-validation.php");
 
 spl_autoload_register(function ($name) {
     $d = (strpos(__FILE__, ".phar") === false ? __DIR__ : "phar://" . __FILE__ . "/src");
-    $name2 = str_replace("_", "-", $name);
 
     if (file_exists("$d" . DIRECTORY_SEPARATOR . "$name.php")) require_once("$d" . DIRECTORY_SEPARATOR . "$name.php");
     else if (file_exists("$d" . DIRECTORY_SEPARATOR . "$name.php")) require_once("$d" . DIRECTORY_SEPARATOR . "$name.php");
