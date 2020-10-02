@@ -151,10 +151,12 @@ class zobject
         $di = file_get_contents(self::datainput_xsl());
         $x = strpos($di, ">", strpos($di, "<xsl:stylesheet"));
         $y = strpos($di, "</xsl:stylesheet");
-        $import = substr($di, $x + 1, $y - $x);
+        $import = substr($di, $x + 1, $y - $x - 1);
 
         $xsl = file_get_contents(self::transform_xsl());
         $xsl = str_replace($target, $import, $xsl);
+
+        file_put_contents(__DIR__ . "/tmp.xsl", $xsl);
 
         return new xml_file($xsl);
     }
@@ -201,7 +203,7 @@ class zobject
     static function admin() { return ""; }
     static function ajax() { return xml_site::$ajax; }
     static function ajax_url() { return "http://localhost/ajax.php"; }
-    static function origin() { return self::encode_args($_SERVER['REQUEST_URI']); }
+    static function origin() { return self::encode_args(@$_SERVER['REQUEST_URI']); }
 
     static function args_prefix()    { return '@@';        }
     static function encode_args($a)  { return self::args_prefix().base64_encode(str_rot13($a));    }

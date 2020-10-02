@@ -17,6 +17,6 @@ class zobject_test extends TestCase
 
     public function testMergeTransformXsl() {
         $res = zobject::merge_xsl();
-        // print_r($res->saveXML());
+        $this->assertTrue(strlen(xml_file::toXml($res)) > 100);
     }
 }

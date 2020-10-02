@@ -122,7 +122,7 @@
         <typedef name="keywordlist" maxlength="200" size="50" db-type="varchar" />
 
         <zobjectdef name="y_datatype" index="name" key-field="T" allow-display="[!]">
-            <xmlfile src="php:zsite_module_file" list="//*/typedef/@name" base="//*/typedef[@name='@T']" />
+            <!-- <xmlfile src="php:zsite_module_file" list="//*/typedef/@name" base="//*/typedef[@name='@T']" /> -->
             <action>php:zadmin_redirect_url</action>
             <fielddefs>
                 <fielddef id="name" caption='DataType' datatype="string" required="1" remote="php:zwpadmin_verify_datatype_name" access="@" />

@@ -20,7 +20,7 @@ class zobject_access
         return true;
     }
 
-    static function check($ZName, $ZMode = "")
+    public static function check($ZName, $ZMode = "")
     {
         self::access($ZName, $ZMode);
         return $ZMode;
