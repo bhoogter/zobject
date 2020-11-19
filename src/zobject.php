@@ -76,6 +76,10 @@ class zobject
         return self::render(xml_file::toDocEl($x), $params, $vArgs);
     }
 
+    static function render_object($n, $params = [], $vArgs = "") {
+        
+    }
+
     static function refresh_object() 
     {
         self::set_log_file('refresh', 'log');
